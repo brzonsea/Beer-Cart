@@ -5,6 +5,7 @@ import Header from '../components/Header/Header';
 import LoadingSpinner from '../components/LoadingSpinner';
 import TagsRow from '../components/Tags/TagsRow';
 import BeerCard from '../components/BeerCard/BeerCard';
+import { beerCommonTagCount } from '../utils';
 import './BeerListPage.css';
 
 class BeerListPage extends Component {
@@ -69,6 +70,19 @@ class BeerListPage extends Component {
   render() {
     const { isLoading, beers, activeIndicatedTags } = this.state;
     console.log('BeerListPage state', beers, activeIndicatedTags);
+    const onlyActiveTagNames = activeIndicatedTags.filter(tag => tag.active).map(obj => (obj.name));
+    console.log('onlyActiveTagNames', onlyActiveTagNames);
+    const processedBeers = beers.map((beer) => {
+      const tagCount = beerCommonTagCount(beer, onlyActiveTagNames);
+      console.log('beer : ', beer.name, tagCount);
+      return ({
+        ...beer,
+        tagCount
+      })
+    });
+    const filteredBeers = processedBeers.filter(beer => (beer.tagCount > 0))
+      .sort((a, b) => (a.tagCount < b.tagCount));
+    console.log('filteredBeers', filteredBeers);
     return (
       <div>
         <Header
@@ -85,7 +99,7 @@ class BeerListPage extends Component {
                   tagOnClick={this.tagOnClick}
                 />
                 {
-                  beers.map((beer) => {
+                  filteredBeers.map((beer) => {
                     console.log('beer', beer);
                     const {
                       name, image, tags, price, stock
