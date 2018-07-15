@@ -1,0 +1,52 @@
+.tag-container-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: max-content;
+  border-radius: 4px;
+  border: solid 1px #3369e8;
+  background-color: #3369e8;
+  margin-right: 6px;
+}
+
+.tag-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: max-content;
+  margin-right: 6px;
+  border-radius: 4px;
+  border: solid 1px #c9d5f3;
+}
+
+.tag-text-active {
+  display: inline-block;
+  width: max-content;
+  font-family: 'APPLE SD Gothic NEO';
+  font-size: 12px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.tag-text {
+  display: inline-block;
+  width: max-content;
+  font-family: 'APPLE SD Gothic NEO';
+  font-size: 12px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4e7bfa;
+  margin-left: 12px;
+  margin-right: 12px;
+}

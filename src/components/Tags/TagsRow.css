@@ -1,0 +1,13 @@
+.tags-row {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.tags-row::-webkit-scrollbar {
+  display: none;
+}

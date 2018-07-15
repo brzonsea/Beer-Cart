@@ -1,0 +1,85 @@
+.beer-card {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: #fff;
+  margin-left: 11px;
+  margin-right: 13px;
+  margin-bottom: 10px;
+  height: 144px;
+  padding: 12px;
+}
+
+.beer-info-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.beer-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 81px;
+  border: solid 1px #ebebed;
+  margin-right: 11px;
+}
+
+img {
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  max-height: 100%;
+}
+
+.beer-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.beer-name {
+  font-family: 'APPLE SD Gothic NEO';
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #3c3c42;
+}
+
+.beer-tags {
+  font-family: 'APPLE SD Gothic NEO';
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #95959e;
+}
+
+.beer-price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'APPLE SD Gothic NEO';
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #768399;
+}
+
+.won {
+  font-family: 'APPLE SD Gothic NEO';
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #3c3c42;
+}
