@@ -84,6 +84,36 @@ img {
   color: #3c3c42;
 }
 
+.beer-count-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.beer-count-label {
+  display: flex;
+  flex-direction: row;
+  font-family: 'APPLE SD Gothic NEO';
+  font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #6e6e78;
+}
+.beer-stock {
+  font-family: 'APPLE SD Gothic NEO';
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #3c3c42;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
 .button-row {
   display: flex;
   flex-direction: row;

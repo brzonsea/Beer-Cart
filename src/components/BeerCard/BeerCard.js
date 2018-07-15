@@ -5,10 +5,19 @@ import { pickBeer } from '../../redux/actions';
 import './BeerCard.css';
 
 class BeerCard extends Component {
+  componentDidMount() {
+    console.log('props', this.props);
+  }
+  componentWillReceiveProps(nextProps) {
+    console.log('nextProps', nextProps);
+  }
   render() {
     const {
-      name, image, tags, price, stock, pickBeer
+      name, image, tags, price, stock, pickBeer, cart
     } = this.props;
+    const pickedBeerCount = cart[name] ? cart[name] : 0;
+    console.log('This Beer name', name, cart);
+    const availableStock = stock - pickedBeerCount;
     let beerTagString = '';
     tags.map((tag, index) => {
       if (tags.length - 1 === index) {
@@ -40,12 +49,32 @@ class BeerCard extends Component {
                 원
               </div>
             </div>
-            <div className="beer-stock">
+            <div className="beer-count-row">
+              <div className="beer-count-label">
+                재고
+                <div className="beer-stock">
+                  {availableStock}
+                </div>
+              </div>
+              {
+                pickedBeerCount > 0 &&
+                <div className="beer-count-label">
+                  수량
+                  <div className="beer-stock">
+                    {pickedBeerCount}
+                  </div>
+                </div>
+
+              }
             </div>
           </div>
         </div>
         <div className="button-row">
-          <button onClick={() => pickBeer(name)} type="button" className="pick-button"> 
+          <button
+            onClick={availableStock < 1 ? () => null : () => pickBeer(name)}
+            type="button"
+            className="pick-button"
+          >
             담기
           </button>
         </div>

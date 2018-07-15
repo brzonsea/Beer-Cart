@@ -36,9 +36,8 @@ Header.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  console.log('mapStateToProps BeerCard', state);
-  const { pickedBeers } = state.cart;
-  const badgeNumber = Object.keys(pickedBeers).length;
+  // const { pickedBeers } = state.cart;
+  const badgeNumber = Object.keys(state.cart).length;
   return {
     badgeNumber,
   };

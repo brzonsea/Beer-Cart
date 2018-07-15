@@ -22,12 +22,10 @@ class BeerListPage extends Component {
   }
 
   componentDidMount() {
-    console.log('BeerListPage props', this.props);
     this.propsHandler(this.props);
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('BeerListPage nextProps', nextProps);
     this.propsHandler(nextProps);
   }
 
@@ -95,7 +93,6 @@ class BeerListPage extends Component {
                 />
                 {
                   filteredBeers.map((beer) => {
-                    console.log('beer', beer);
                     const {
                       name, image, tags, price, stock
                     } = beer;
