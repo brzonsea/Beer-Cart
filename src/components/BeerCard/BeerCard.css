@@ -6,7 +6,6 @@
   margin-left: 11px;
   margin-right: 13px;
   margin-bottom: 10px;
-  height: 144px;
   padding: 12px;
 }
 
@@ -118,6 +117,7 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .pick-button {
@@ -133,4 +133,36 @@ img {
   line-height: normal;
   letter-spacing: normal;
   color: #ffffff;
+}
+
+.pick-button-deactivate {
+  width: 45px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #dcdce0;
+  border: solid 1px #dcdce0;
+  font-family: 'APPLE SD Gothic NEO';
+  font-size: 12px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.unpick-button {
+  width: 47px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: rgba(58, 73, 97, 0.07);
+  font-family: 'APPLE SD Gothic NEO';
+  font-size: 12px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #3a4961;
+  margin-right: 6px;
 }

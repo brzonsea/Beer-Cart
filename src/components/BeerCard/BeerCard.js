@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { pickBeer } from '../../redux/actions';
+import { pickBeer, unpickBeer } from '../../redux/actions';
 import './BeerCard.css';
 
 class BeerCard extends Component {
@@ -13,7 +13,7 @@ class BeerCard extends Component {
   }
   render() {
     const {
-      name, image, tags, price, stock, pickBeer, cart
+      name, image, tags, price, stock, pickBeer, unpickBeer, cart
     } = this.props;
     const pickedBeerCount = cart[name] ? cart[name] : 0;
     console.log('This Beer name', name, cart);
@@ -70,10 +70,20 @@ class BeerCard extends Component {
           </div>
         </div>
         <div className="button-row">
+          {
+            pickedBeerCount > 0 &&
+            <button
+              onClick={() => unpickBeer(name)}
+              type="button"
+              className="unpick-button"
+            >
+              빼기
+            </button>
+          }
           <button
             onClick={availableStock < 1 ? () => null : () => pickBeer(name)}
             type="button"
-            className="pick-button"
+            className={availableStock < 1 ? "pick-button-deactivate" : "pick-button"}
           >
             담기
           </button>
@@ -99,4 +109,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { pickBeer })(BeerCard);
+export default connect(mapStateToProps, { pickBeer, unpickBeer })(BeerCard);

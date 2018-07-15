@@ -9,3 +9,12 @@ export function pickBeer(beer) {
     });
   };
 }
+
+export function unpickBeer(beer) {
+  return (dispatch) => {
+    dispatch({
+      type: 'beer_unpick',
+      beer,
+    });
+  };
+}
