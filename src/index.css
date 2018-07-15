@@ -1,5 +1,11 @@
-body {
+body        {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'APPLE SD Gothic NEO', sans-serif;
+  margin-left: auto;
+  margin-right: auto;
 }
+.normal     { font-weight: 400 }
+.bold       { font-weight: 700 }
+.bolder     { font-weight: 800 }
+.light      { font-weight: 300 }

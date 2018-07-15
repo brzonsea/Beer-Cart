@@ -1,0 +1,25 @@
+.badge-container {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  flex: -1;
+  justify-content: center;
+  align-items: center;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background-color: #ef5350;
+}
+
+.badge-number {
+  font-family: 'APPLE SD Gothic NEO';
+  font-size: 10px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-top: 1px;
+  color: #ffffff;
+}

@@ -1,0 +1,100 @@
+{
+  "beers": [
+    {
+      "id": 0, "name": "CASS", "image": "cass.jpg",
+      "tags": [
+        { "key": "lager", "name": "라거" },
+        { "key": "domestic", "name": "국산맥주" },
+        { "key": "OBbeer", "name": "OB맥주" }
+      ],
+      "price": 2500,
+      "stock": 20
+    },
+    {
+      "id": 1, "name": "Kloud", "image": "kloud.jpg",
+      "tags": [
+        { "key": "lager", "name": "라거" },
+        { "key": "domestic", "name": "국산맥주" }
+      ],
+      "price": 3500,
+      "stock": 10
+    },
+    {
+      "id": 2, "name": "Hite", "image": "hite.jpg",
+      "tags": [
+        { "key": "lager", "name": "라거" },
+        { "key": "domestic", "name": "국산맥주" },
+        { "key": "HiteJinro", "name": "하이트진로" }
+      ],
+      "price": 2500,
+      "stock": 15
+    },
+    {
+      "id": 3, "name": "Max", "image": "max.jpg",
+      "tags": [
+        { "key": "lager", "name": "라거" },
+        { "key": "domestic", "name": "국산맥주" },
+        { "key": "HiteJinro", "name": "하이트진로" }
+      ],
+      "price": 3000,
+      "stock": 12
+    },
+    {
+      "id": 4, "name": "Heineken", "image": "heineken.jpeg",
+      "tags": [
+        { "key": "lager", "name": "라거" },
+        { "key": "imported", "name": "수입맥주" }
+      ],
+      "price": 3000,
+      "stock": 40
+    },
+    {
+      "id": 5, "name": "Guinness", "image": "guinness.jpeg",
+      "tags": [
+        { "key": "stout", "name": "스타우트" },
+        { "key": "imported", "name": "수입맥주" }
+      ],
+      "price": 6000,
+      "stock": 4
+    },
+    {
+      "id": 6, "name": "Newcastle Brown Ale", "image": "newcastlebrownale.jpg",
+      "tags": [
+        { "key": "ale", "name": "에일" },
+        { "key": "imported", "name": "수입맥주" }
+      ],
+      "price": 9000,
+      "stock": 1
+    },
+    {
+      "id": 7, "name": "Queen's Ale", "image": "queensale.jpg",
+      "tags": [
+        { "key": "ale", "name": "에일" },
+        { "key": "domestic", "name": "국산맥주" },
+        { "key": "HiteJinro", "name": "하이트진로" }
+      ],
+      "price": 4000,
+      "stock": 3
+    },
+    {
+      "id": 8, "name": "Weihenstephaner", "image": "weihenstephaner.jpg",
+      "tags": [
+        { "key": "weissbeir", "name": "밀맥주" },
+        { "key": "imported", "name": "수입맥주" }
+      ],
+      "price": 10000,
+      "stock": 2
+    }
+  ],
+  "tags": [
+    { "key": "lager", "name": "라거" },
+    { "key": "ale", "name": "에일" },
+    { "key": "lambic", "name": "람빅" },
+    { "key": "stout", "name": "스타우트" },
+    { "key": "weissbeir", "name": "밀맥주" },
+    { "key": "domestic", "name": "국산맥주" },
+    { "key": "imported", "name": "수입맥주" },
+    { "key": "OBbeer", "name": "OB맥주" },
+    { "key": "HiteJinro", "name": "하이트진로" }
+  ]
+}
