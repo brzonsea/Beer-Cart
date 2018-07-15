@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import ListButton from './ListButton';
 import CartButton from './CartButton';
@@ -34,4 +35,13 @@ Header.propTypes = {
   badgeNumber: PropTypes.number,
 };
 
-export default Header;
+const mapStateToProps = (state) => {
+  console.log('mapStateToProps BeerCard', state);
+  const { pickedBeers } = state.cart;
+  const badgeNumber = Object.keys(pickedBeers).length;
+  return {
+    badgeNumber,
+  };
+};
+
+export default connect(mapStateToProps)(Header);

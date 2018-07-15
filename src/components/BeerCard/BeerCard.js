@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { pickBeer } from '../../redux/actions';
 import './BeerCard.css';
 
 class BeerCard extends Component {
   render() {
     const {
-      name, image, tags, price, stock,
+      name, image, tags, price, stock, pickBeer
     } = this.props;
     let beerTagString = '';
     tags.map((tag, index) => {
@@ -42,6 +44,11 @@ class BeerCard extends Component {
             </div>
           </div>
         </div>
+        <div className="button-row">
+          <button onClick={() => pickBeer(name)} type="button" className="pick-button"> 
+            담기
+          </button>
+        </div>
       </div>
     );
   }
@@ -54,4 +61,13 @@ BeerCard.propTypes = {
   price: PropTypes.number.isRequired,
   stock: PropTypes.number.isRequired,
 };
-export default BeerCard;
+
+const mapStateToProps = (state) => {
+  console.log('mapStateToProps BeerCard', state);
+  return {
+    beers: state.beers,
+    cart: state.cart,
+  };
+};
+
+export default connect(mapStateToProps, { pickBeer })(BeerCard);

@@ -16,6 +16,7 @@ class BeerListPage extends Component {
       beers: [],
       tags: [],
       activeIndicatedTags: [],
+      renderNumber: 5,
     };
     this.tagOnClick = this.tagOnClick.bind(this);
   }
@@ -31,7 +32,7 @@ class BeerListPage extends Component {
   }
 
   propsHandler(props) {
-    const { beers, tags } = props;
+    const { beers, tags, cart } = props;
     const beersEmpty = _.isEmpty(beers);
     const tagsEmpty = _.isEmpty(tags);
     if (beersEmpty || tagsEmpty) {
@@ -56,7 +57,6 @@ class BeerListPage extends Component {
     console.log(activeIndicatedTags);
     const tagObject = activeIndicatedTags[index];
     const { key, name, active } = tagObject;
-    console.log('clicked tagObject', tagObject);
     const replacement = {
       key,
       name,
@@ -69,12 +69,9 @@ class BeerListPage extends Component {
 
   render() {
     const { isLoading, beers, activeIndicatedTags } = this.state;
-    console.log('BeerListPage state', beers, activeIndicatedTags);
     const onlyActiveTagNames = activeIndicatedTags.filter(tag => tag.active).map(obj => (obj.name));
-    console.log('onlyActiveTagNames', onlyActiveTagNames);
     const processedBeers = beers.map((beer) => {
       const tagCount = beerCommonTagCount(beer, onlyActiveTagNames);
-      console.log('beer : ', beer.name, tagCount);
       return ({
         ...beer,
         tagCount
@@ -82,12 +79,10 @@ class BeerListPage extends Component {
     });
     const filteredBeers = processedBeers.filter(beer => (beer.tagCount > 0))
       .sort((a, b) => (a.tagCount < b.tagCount));
-    console.log('filteredBeers', filteredBeers);
     return (
       <div>
         <Header
           activateList
-          badgeNumber={99}
         />
         {
           isLoading
@@ -124,7 +119,6 @@ class BeerListPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log('mapStateToProps', state);
   return {
     beers: state.beers,
     tags: state.tags,

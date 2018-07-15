@@ -83,3 +83,24 @@ img {
   letter-spacing: normal;
   color: #3c3c42;
 }
+
+.button-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.pick-button {
+  width: 45px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #3369e8;
+  font-family: 'APPLE SD Gothic NEO';
+  font-size: 12px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+}
