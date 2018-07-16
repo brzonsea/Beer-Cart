@@ -9,7 +9,6 @@ import { beerAddString } from '../../config/strings';
 import './Header.css';
 
 const Header = ({ activateList, activateCart, badgeNumber }) => {
-  console.log(activateList, activateCart, badgeNumber);
   return (
     <div className="header-container">
       <div className="header-text">

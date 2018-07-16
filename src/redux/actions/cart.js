@@ -18,3 +18,13 @@ export function unpickBeer(beer) {
     });
   };
 }
+
+export function buyAllBeer(totalBeerCount, total) {
+  return (dispatch) => {
+    dispatch({
+      type: 'beer_buy_all',
+      totalBeerCount,
+      total,
+    });
+  };
+}

@@ -1,0 +1,96 @@
+.empty-cart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shopping-bag-icon {
+  width: 60px;
+  height: 56px;
+  margin-top: 70px;
+  margin-bottom: 21px;
+}
+
+.cart-empty-message {
+  font-family: 'APPLE SD Gothic NEO';
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #6e6e78;
+  margin-bottom: 11px;
+}
+
+.cart-empty-suggestion {
+  width: 133px;
+  font-family: 'APPLE SD Gothic NEO';
+  font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #95959e;
+}
+
+.go-to-list-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  width: 164px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: #3369e8;
+  font-family: 'APPLE SD Gothic NEO';
+  font-size: 12px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.total-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 13px;
+  font-family: 'APPLE SD Gothic NEO';
+  font-size: 20px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #95959e;
+}
+.total-number {
+  font-weight: bold;
+  color: #768399;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.buy-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 16px 13px 32px 12px;
+  height: 50px;
+  border-radius: 4px;
+  background-color: #3369e8;
+  font-family: 'APPLE SD Gothic NEO';
+  font-size: 20px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+}

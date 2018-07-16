@@ -14,7 +14,6 @@ class Routes extends Component {
   }
 
   render() {
-    console.log('Switch', Switch);
     return (
       <Switch>
         <Route exact path="/" component={BeerListPage} />

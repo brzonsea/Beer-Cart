@@ -52,7 +52,6 @@ class BeerListPage extends Component {
 
   tagOnClick(index) {
     const { activeIndicatedTags } = this.state;
-    console.log(activeIndicatedTags);
     const tagObject = activeIndicatedTags[index];
     const { key, name, active } = tagObject;
     const replacement = {
@@ -61,7 +60,6 @@ class BeerListPage extends Component {
       active: !active
     }
     activeIndicatedTags.splice(index, 1, replacement);
-    console.log(activeIndicatedTags);
     this.setState({ activeIndicatedTags });
   }
 

@@ -9,7 +9,6 @@ const TagsRow = ({ activeIndicatedTags, tagOnClick }) => (
     {
       activeIndicatedTags.map((tag, index) => {
         const { active, name, key } = tag;
-        console.log(`${index} is active`, active);
         return (
           <TagButton
             tagName={name}

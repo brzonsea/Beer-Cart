@@ -2,21 +2,17 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { pickBeer, unpickBeer } from '../../redux/actions';
+import {
+ addString, minusString, cancelString, stockString, countString,
+} from '../../config/strings';
 import './BeerCard.css';
 
 class BeerCard extends Component {
-  componentDidMount() {
-    console.log('props', this.props);
-  }
-  componentWillReceiveProps(nextProps) {
-    console.log('nextProps', nextProps);
-  }
   render() {
     const {
-      name, image, tags, price, stock, pickBeer, unpickBeer, cart
+      name, image, tags, price, stock, pickBeer, unpickBeer, cart, fromShopCart
     } = this.props;
     const pickedBeerCount = cart[name] ? cart[name] : 0;
-    console.log('This Beer name', name, cart);
     const availableStock = stock - pickedBeerCount;
     let beerTagString = '';
     tags.map((tag, index) => {
@@ -26,7 +22,6 @@ class BeerCard extends Component {
         beerTagString += `${tag.name}, `;
       }
     });
-    console.log(beerTagString);
     return (
       <div className="beer-card">
         <div className="beer-info-container">
@@ -51,7 +46,7 @@ class BeerCard extends Component {
             </div>
             <div className="beer-count-row">
               <div className="beer-count-label">
-                재고
+                {stockString}
                 <div className="beer-stock">
                   {availableStock}
                 </div>
@@ -59,7 +54,7 @@ class BeerCard extends Component {
               {
                 pickedBeerCount > 0 &&
                 <div className="beer-count-label">
-                  수량
+                  {countString}
                   <div className="beer-stock">
                     {pickedBeerCount}
                   </div>
@@ -77,21 +72,28 @@ class BeerCard extends Component {
               type="button"
               className="unpick-button"
             >
-              빼기
+              {fromShopCart ? cancelString : minusString}
             </button>
           }
-          <button
-            onClick={availableStock < 1 ? () => null : () => pickBeer(name)}
-            type="button"
-            className={availableStock < 1 ? "pick-button-deactivate" : "pick-button"}
-          >
-            담기
-          </button>
+          {
+            !fromShopCart &&
+            <button
+              onClick={availableStock < 1 ? () => null : () => pickBeer(name)}
+              type="button"
+              className={availableStock < 1 ? "pick-button-deactivate" : "pick-button"}
+            >
+              {addString}
+            </button>
+          }
         </div>
       </div>
     );
   }
 }
+
+BeerCard.defaultProps = {
+  fromShopCart: false,
+};
 
 BeerCard.propTypes = {
   name: PropTypes.string.isRequired,
@@ -99,10 +101,10 @@ BeerCard.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.object).isRequired,
   price: PropTypes.number.isRequired,
   stock: PropTypes.number.isRequired,
+  fromShopCart: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => {
-  console.log('mapStateToProps BeerCard', state);
   return {
     beers: state.beers,
     cart: state.cart,
